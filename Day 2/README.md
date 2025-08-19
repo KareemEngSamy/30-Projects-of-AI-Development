@@ -1,7 +1,6 @@
-This project implements a Convolutional Neural Network (CNN) to classify handwritten digits from the [MNIST dataset].  
-The model is built using **Keras** with a **TensorFlow** backend.
+### This project implements a Convolutional Neural Network (CNN) to classify handwritten digits from the [MNIST dataset].
+  
 
----
 
 ## Features
 - Loads and preprocesses the MNIST dataset.
@@ -12,7 +11,7 @@ The model is built using **Keras** with a **TensorFlow** backend.
 - Achieves **~99% test accuracy**.
 - Displays predictions on random test images.
 
----
+
 
 ## Model Architecture
 1. **Conv2D**: 32 filters, 3×3, ReLU activation  
@@ -24,7 +23,7 @@ The model is built using **Keras** with a **TensorFlow** backend.
 7. **Dense**: 64 units, ReLU activation  
 8. **Dense**: 10 units, Softmax activation  
 
----
+
 
 ## Training Details
 - Optimizer: **Adam**  
@@ -34,23 +33,21 @@ The model is built using **Keras** with a **TensorFlow** backend.
 - Batch size: **64**  
 - Validation: test dataset  
 
----
 
-This will:
+
+## Outcome:
 1. Train the CNN on MNIST.  
 2. Print test accuracy (~99%).  
 3. Show 10 random test images with predicted labels.  
 
----
+
 
 ## Example Output
-Test accuracy: 99.00%
-Prediction for test image 1234: 7
-```
 
-Example image output:  
-A grayscale digit with a title showing its predicted label.
+- Test accuracy: 98.87%
+- Prediction for test image 1234: 7
+- A grayscale digit image with a title showing its predicted label.
 
 
 ## Customization
-- Modify `TEST_CASES` to show more or fewer random predictions.  
+- Modify ***TEST_CASES*** to show more or fewer random predictions.  
