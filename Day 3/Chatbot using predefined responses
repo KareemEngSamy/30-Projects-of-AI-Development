@@ -1,0 +1,81 @@
+# Import the regular expression module to handle pattern matching
+import re
+import random
+import string
+
+# A dictionary mapping keywords to lists of possible responses
+responses = {
+    "hello": ["Hi there! How can I help you?", "Hello! How's your day going?", "Hey! Glad you're here."],
+    "hi": ["Hello! What can I do for you?", "Hi! How's everything?", "Hey there! Need any help?"],
+    "hey": ["Hey! How's it going?", "Yo! What's up?", "Hey there! How can I assist you?"],
+    "how are you": ["I'm doing great, thanks for asking!", "I'm just a program, but I feel ready to help!", "I'm always good when I'm chatting with you."],
+    "what is your name": ["I am a chatbot created to assist you. You can call me Chatbot.", "My name's Chatbot, nice to meet you!", "You can call me Chatbot, your friendly assistant."],
+    "who are you": ["I'm your chatbot assistant, here to help you.", "I'm Chatbot, created to make things easier for you.", "Just a friendly chatbot ready to chat."],
+    "what can you do": ["I can answer your questions, tell jokes, and provide predefined information.", "I can chat, tell jokes, and assist with basics.", "I give predefined answers, but I try to be helpful!"],
+    "who created you": ["I was created by Kareem Samy to assist users like you.", "Kareem Samy made me to help you out.", "My creator is Kareem Samy."],
+    "joke": ["Why did the scarecrow win an award? Because he was outstanding in his field!", "Why don't programmers like nature? Too many bugs!", "Why did the computer go to the doctor? Because it caught a virus!"],
+    "tell me a joke": ["Why do cows wear bells? Because their horns don't work!", "Why did the math book look sad? Too many problems!", "Why don't skeletons fight each other? They don't have the guts."],
+    "funny": ["I try my best! Want to hear another joke?", "Glad you liked it! Should I tell you one more?", "Haha! Humor is my specialty."],
+    "weather": ["I can't provide real-time weather updates, but you can check a weather app.", "I don't have live weather info, check your phone's app.", "Sorry, no live weather from me. Try a website."],
+    "news": ["I don't have current news, but you can visit a news website.", "I can't fetch live news, but you can check online.", "For updates, I suggest a news app."],
+    "time": ["I can't tell the exact time, but your device can.", "Sorry, no real-time clock here. Check your screen.", "Your device clock is more accurate than me!"],
+    "date": ["I don't have today's date. Your calendar does.", "Sorry, I can't give the date. Check your device.", "Your phone or PC can show you today's date."],
+    "greet": ["Hello! How can I assist you today?", "Hi there! What's up?", "Hey! What do you want to do today?"],
+    "help": ["Sure! Tell me what you need help with.", "I'm here to help. What's your question?", "Ask away, I'll do my best to answer."],
+    "bye": ["Goodbye! Have a great day!", "See you later! Take care.", "Bye! Hope to chat again soon."],
+    "goodbye": ["Goodbye! Come back anytime.", "See you around!", "Later! It was nice chatting."],
+    "thanks": ["You're welcome! If you have more questions, just ask.", "Glad I could help!", "No problem at all!"],
+    "thank you": ["You're welcome! Anytime.", "Always happy to help.", "Don't mention it!"],
+    "sorry": ["No worries at all.", "It's okay, don't worry about it.", "All good! Let's move on."],
+    "good morning": ["Good morning! Hope your day goes well.", "Morning! What's your plan for today?", "Good morning! Ready to start fresh?"],
+    "good night": ["Good night! Sleep well.", "Sweet dreams!", "Good night! Rest up for tomorrow."],
+    "good afternoon": ["Good afternoon! How's your day so far?", "Afternoon! Busy day?", "Hello! How's it going this afternoon?"],
+    "good evening": ["Good evening! How are you doing?", "Evening! Hope you had a good day.", "Good evening! Relaxing, I hope?"],
+    "nice to meet you": ["Nice to meet you too!", "The pleasure is mine.", "Glad we connected!"],
+    "who am i": ["You're a valued user chatting with me.", "You're the reason I exist!", "You're my human friend here."],
+    "where are you": ["I live in the digital world.", "I'm right here, in your device.", "I exist online, always ready."],
+    "how old are you": ["I don't have an age, I just run on code.", "Age doesn't apply to me.", "I was created recently, but I don't age like humans."],
+    "are you real": ["I'm real as a program, but not human.", "I exist in code, not flesh and bones.", "I'm virtual, but our chat is real."],
+    "do you like me": ["Of course! I enjoy chatting with you.", "Yes! You're fun to talk to.", "Absolutely, you make my day."],
+    "favorite color": ["I don't see colors, but blue seems popular!", "Colors are cool, but I can't pick one.", "Many people love red, blue, and green!"],
+    "favorite food": ["I don't eat, but I've heard pizza is a favorite.", "Food isn't for me, but burgers are popular.", "I've read that people love chocolate a lot!"],
+    "default": ["I'm sorry, I don't understand that. Can you rephrase?", "Not sure what you mean. Can you try again?", "I didn't catch that. Want to ask me something else?"]
+}
+
+def clean_input(text):
+    # Lowercase
+    text = text.lower()
+
+    # Remove punctuation
+    text = text.translate(str.maketrans("", "", string.punctuation))
+    return text.strip()
+
+# Function to get a response based on user input
+def get_response(user_input):
+    # Clean the input
+    user_input = clean_input(user_input)
+    
+    # Search for a matching keyword
+    for keyword in responses:
+        if re.search(keyword, user_input):
+            return random.choice(responses[keyword])
+    
+    # If no match, return default
+    return random.choice(responses["default"])
+
+# Main chatbot loop
+def chatbot():
+    print("Welcome to the Chatbot! Type 'exit' to end the conversation.")
+    
+    while True:
+        user_input = input("You: ")
+        
+        if user_input.lower() == 'exit':
+            print("Chatbot: Goodbye! Have a great day!")
+            break
+        
+        response = get_response(user_input)
+        print(f"Chatbot: {response}")
+
+# Run the chatbot
+chatbot()
