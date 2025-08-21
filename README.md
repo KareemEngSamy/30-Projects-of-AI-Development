@@ -3,7 +3,6 @@
 This repository documents a challenge of building **30 AI/ML projects in 30 days**.  
 Each project is small, focused, and designed to strengthen practical machine learning and AI skills.  
 
----
 
 ## Projects Overview
 
@@ -38,24 +37,12 @@ Each project is small, focused, and designed to strengthen practical machine lea
 29. Movie Rating Prediction using Collaborative Filtering  
 30. Automatic Essay Grading using BERT  
 
----
-
 ## Goal
 
 - Strengthen AI/ML fundamentals  
 - Build practical, working projects quickly  
 - Gain hands-on experience with libraries like TensorFlow, Scikit-learn, NLTK, spaCy, and more  
 - Share progress daily for consistency  
-
----
-
-## How to Use
-
-- Each project is in its own folder  
-- Open the folder to view the Python scripts and notebooks  
-- Run the code in your local environment  
-
----
 
 ## Tech Stack
 
@@ -65,7 +52,6 @@ Each project is small, focused, and designed to strengthen practical machine lea
 - **NLTK / spaCy**  
 - **Pandas / NumPy / Matplotlib**  
 
----
 
 ## License
 
