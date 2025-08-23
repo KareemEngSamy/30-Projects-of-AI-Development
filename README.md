@@ -7,7 +7,7 @@ Each project is small, focused, and designed to strengthen practical machine lea
 ## Projects Overview
 
 1. Basic Calculator using Python  
-2. Hand written digits classifier using Keras 
+2. Hand written digits classifier using MNIST dataset with CNN and Keras 
 3. Simple Chatbot using predefined responses  
 4. Spam Email Detector using Scikit-learn  
 5. Human Activity Recognition using Smartphones dataset with random forest
