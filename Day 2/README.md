@@ -48,6 +48,10 @@
 - Prediction for test image 1234: 7
 - A grayscale digit image with a title showing its predicted label.
 
+![Example Output](images/sample1.png)  
+![Example Output](images/sample2.png) 
+![Example Output](images/sample3.png) 
+
 
 ## Customization
 - Modify ***TEST_CASES*** to show more or fewer random predictions.  
